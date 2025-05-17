@@ -5,7 +5,7 @@ int main(){
     int trits, decimal;
     int dig1, dig2, dig3, dig4;
     
-    printf("Insira um valor em trits (0, 1, 2) de até quatro digitos:\n");
+    printf("Insira o valor\n");
     scanf("%d", &trits);
     
     dig1 = trits / 1000;
