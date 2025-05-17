@@ -92,6 +92,5 @@ int main(){
             num = 0;
         printf("%d", num);
         return 0;
-    }
-         
+    }       
 }
