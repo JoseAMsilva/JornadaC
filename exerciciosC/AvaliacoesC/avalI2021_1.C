@@ -1,96 +1,55 @@
 #include <stdio.h>
 
 int main(){
-    int num, trit, t1, t2, t3, t4;
-    printf("Insira o codigo trit\n");
-    scanf("%d", &trit);
-    if(trit > 999){
-        t1 = trit / 1000;
-        t2 = trit / 100 % 10;
-        t3 = trit / 10 % 10;
-        t4 = trit % 10;
+    
+    int trits, decimal;
+    int dig1, dig2, dig3, dig4;
+    
+    printf("Insira um valor em trits (0, 1, 2) de até quatro digitos:\n");
+    scanf("%d", &trits);
+    
+    dig1 = trits / 1000;
+    dig2 = (trits / 100) % 10;
+    dig3 = (trits / 10) % 10;
+    dig4 = trits % 10;
+    
+    if(dig1 == 2)
+        dig1 = 27;
+    else if(dig1 == 1)
+        dig1 = 0;
+    else if(dig1 == 0)
+        dig1 = 0;
+    
+    if(dig2 == 2)
+        dig2 = 9;
+    else if(dig2 == 1)
+        dig2 = 0;
+    else if(dig2 == 0 && dig1 == 0)
+        dig2 = 0;
+    else if(dig2 == 0 && dig1 != 0)
+        dig2 = -9;
         
-        if(t1 == 2){
-            num = 27;
-        }else if(t1 == 0){
-            num += 0;
-        }else
-            num += 0;
-        if(t2 == 2){
-            num += 9;
-        }else if(t2 == 0){
-            num += -9;
-        }else
-            num += 0;
-        if(t3 == 2){
-            num += 3;
-        }else if(t3 == 0){
-            num += -3;
-        }else
-            num += 0;
-        if(t4 == 2){
-            num++;
-        }else if(t4 == 0){
-            num--;
-        }else
-            num += 0;
-        printf("%d", num);
-        return 0;
+    if(dig3 == 2)
+        dig3 = 3;
+    else if(dig3 == 1)
+        dig3 = 0;
+    else if(dig3 == 0 && dig2 == 0 && dig1 == 0)
+        dig3 = 0;
+    else if(dig3 == 0 && (dig2 != 0 || dig1 != 0))
+        dig3 = -3;
         
-    }else if(trit > 99 && trit < 999){
-        t1 = trit / 100;
-        t2 = trit / 10 % 10;
-        t3 = trit % 10;
+    if(dig4 == 2)
+        dig4 = 1;
+    else if(dig4 == 1)
+        dig4 = 0;
+    else if(dig3 == 0 && dig2 == 0 && dig1 == 0)
+        dig4 = 0;
+    else if(dig4 == 0)
+        dig4 = -1;
         
-        if(t1 == 2){
-            num = 9;
-        }else if(t1 == 0){
-            num += 0;
-        }else
-            num += 0;
-        if(t2 == 2){
-            num += 3;
-        }else if(t2 == 0){
-            num += -3;
-        }else
-            num += 0;
-        if(t3 == 2){
-            num ++;
-        }else if(t3 == 0){
-            num --;
-        }else
-            num += 0;
-            
-        printf("%d", num);
-        return 0;
-        
-    }else if(trit < 99 & trit > 9){
-        t1 = trit / 10;
-        t2 = trit % 10;
-        
-        if(t1 == 2){
-            num = 3;
-        }else if(t1 == 0){
-            num += 0;
-        }else
-            num += 0;
-        if(t2 == 2){
-            num ++;
-        }else if(t2 == 0){
-            num --;
-        }else
-            num += 0;
-        printf("%d", num);
-        return 0;
-    }else if(trit < 9){
-        t1 = trit;
-        if(t1 == 2){
-            num = 1;
-        }else if(t1 == 0){
-            num = 0;
-        }else
-            num = 0;
-        printf("%d", num);
-        return 0;
-    }       
+    decimal = dig1 + dig2 + dig3 + dig4;
+    
+    printf("O número %d em decimal é:\n%d", trits, decimal);
+
+    return 0;
 }
