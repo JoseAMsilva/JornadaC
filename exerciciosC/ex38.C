@@ -48,31 +48,31 @@ int main(){
 	if(d > 0){
 		switch(d){
 			case 1:
-				if(d == 1){
-					switch(u){
-					case 0: 
-						printf("dez"); break;
-					case 1:
-						printf("onze"); break;
-					case 2:
-						printf("doze"); break;
-					case 3:
-						printf("treze"); break;
-					case 4:
-						printf("quatorze"); break;
-					case 5:
-						printf("quinze"); break;
-					case 6:
-						printf("dezesseis"); break;
-					case 7:
-						printf("dezessete"); break;
-					case 8:
-						printf("dezoito"); break;
-					case 9:
-						printf("dezenove"); break;
-					}
-					return 0;
+			if(d == 1){
+				switch(u){
+				case 0: 
+					printf("dez"); break;
+				case 1:
+					printf("onze"); break;
+				case 2:
+					printf("doze"); break;
+				case 3:
+					printf("treze"); break;
+				case 4:
+					printf("quatorze"); break;
+				case 5:
+					printf("quinze"); break;
+				case 6:
+					printf("dezesseis"); break;
+				case 7:
+					printf("dezessete"); break;
+				case 8:
+					printf("dezoito"); break;
+				case 9:
+					printf("dezenove"); break;
 				}
+				return 0;
+			}
 			case 2:
 				printf("vinte"); break;
 			case 3:
@@ -114,7 +114,6 @@ int main(){
 				printf("oito"); break;
 			case 9:
 				printf("nove"); break;
-			
 		}
 	}
 	return 0;
